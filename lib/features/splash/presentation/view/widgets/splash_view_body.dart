@@ -93,7 +93,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
+      GoRouter.of(context).pushReplacement(AppRouter.kDashboardView);
     });
   }
 }

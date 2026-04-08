@@ -1,11 +1,13 @@
 import 'package:edu_center_manager/features/auth/presentation/view/login_view.dart';
+import 'package:edu_center_manager/features/dashboard/presentation/view/dashboard_view.dart';
 import 'package:edu_center_manager/features/home/presentation/view/widgets/home_view.dart';
 import 'package:edu_center_manager/features/splash/presentation/view/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
+  static const kLoginView = '/loginView';
+  static const kDashboardView = '/dashboardView';
   static const kHomeView = '/homeView';
-  static const kLoginView = '/loginView';  
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -18,6 +20,12 @@ abstract class AppRouter {
         path: kLoginView,
         builder: (context, state) {
           return const LoginView();
+        },
+      ),
+      GoRoute(
+        path: kDashboardView,
+        builder: (context, state) {
+          return const DashboardView();
         },
       ),
       GoRoute(
