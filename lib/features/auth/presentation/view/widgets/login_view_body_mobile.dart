@@ -36,7 +36,8 @@ class LoginViewBodyMobile extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'enterYourEmailAndPasswordToLogIn'.tr(),
+                    'welcomeToEduCenterManager'.tr(),
+
                     style: AppStyles.styleRegular16(
                       context,
                     ).copyWith(color: Colors.white.withOpacity(.9)),

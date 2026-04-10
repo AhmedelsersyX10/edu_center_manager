@@ -49,7 +49,8 @@ class LoginFormCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'welcomeToEduCenterManager'.tr(),
+                'enterYourEmailAndPasswordToLogIn'.tr(),
+
                 style: AppStyles.styleRegular16(context).copyWith(color: Colors.grey),
               ),
               const SizedBox(height: 32),

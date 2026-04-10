@@ -13,7 +13,6 @@ class AppInitializer {
 
       await EasyLocalization.ensureInitialized();
 
-
       await Supabase.initialize(
         url: dotenv.env['SUPABASE_URL']!,
         anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
@@ -31,10 +30,10 @@ class AppInitializer {
   }
 
   static String _resolveRoute(bool isLoggedIn, String? role) {
-    if (!isLoggedIn) return AppRouter.kSplashView;
+    if (!isLoggedIn) return AppRouter.kLoginView;
     return switch (role) {
       'admin' => AppRouter.kDashboardView,
-      'teacher' => AppRouter.kHomeView,
+      'teacher' => AppRouter.kDashboardView,
       _ => AppRouter.kLoginView,
     };
   }
