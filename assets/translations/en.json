@@ -37,5 +37,13 @@
   "paymentsReport": "Payments Report",
   "attendanceReport": "Attendance Report",
   "reports": "Reports",
-  "settings": "Settings"
+  "settings": "Settings",
+  "studentAddedSuccessfully": "Student added successfully",
+  "addNewStudent": "Add New Student",
+  "studentName": "Student Name",
+  "studentNameRequired": "Student name is required",
+  "address": "Address",
+  "parentPhone": "Parent Phone",
+  "invalidPhone": "Invalid phone number",
+  "grade": "Grade"
 }

@@ -37,5 +37,13 @@
   "paymentsManagement": "إدارة الدفع",
   "paymentsReport": "تقرير الدفع",
   "reports": "التقارير",
-  "settings": "الإعدادات"
+  "settings": "الإعدادات",
+  "addNewStudent": "إضافة طالب جديد",
+  "studentName": "اسم الطالب",
+  "studentNameRequired": "اسم الطالب مطلوب",
+  "address": "العنوان",
+  "parentPhone": "رقم ولى الأمر",
+  "invalidPhone": "رقم الهاتف غير صحيح",
+  "grade": "الصف الدراسى",
+  "studentAddedSuccessfully": "تم إضافة الطالب بنجاح"
 }

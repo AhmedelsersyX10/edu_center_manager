@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:edu_center_manager/core/constants/list_grades.dart';
+import 'package:edu_center_manager/core/utils/app_style.dart';
 import 'package:edu_center_manager/core/widgets/custom_header.dart';
 import 'package:edu_center_manager/core/widgets/custom_toolbar.dart';
+import 'package:edu_center_manager/features/students/presentation/view/widgets/show_add_student_form.dart';
 import 'package:edu_center_manager/features/students/presentation/view_model/students_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +32,9 @@ class StudentsViewBodyMobile extends StatelessWidget {
                 hintTextField: 'searchForStudent'.tr(),
                 selected: selectedGrade,
                 list: grades,
-                onChanged: (value) {},
+                onChanged: (value) {
+                  if (value != null) context.read<StudentsCubit>().filterByGrade(value);
+                },
                 onAdd: () => _onAddStudent(context),
                 onSearch: (query) => _onSearch(context, query),
               ),
@@ -46,5 +50,19 @@ class StudentsViewBodyMobile extends StatelessWidget {
     context.read<StudentsCubit>().searchStudents(query);
   }
 
-  void _onAddStudent(BuildContext context) {}
+  void _onAddStudent(BuildContext context) {
+    showStudentForm(
+      context,
+      onSubmit: (newStudent) async {
+        await context.read<StudentsCubit>().addStudent(newStudent);
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('studentAddedSuccessfully'.tr(), style: AppStyles.styleBold16(context)),
+            ),
+          );
+        }
+      },
+    );
+  }
 }
