@@ -13,17 +13,10 @@ class CustomHeader extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: ListTile(
-            leading: Icon(icon, color: Theme.of(context).textTheme.titleMedium?.color, size: 40),
-            title: Text(title, style: AppStyles.styleBold28(context)),
-            subtitle: Text(description, style: AppStyles.styleRegular18(context)),
-          ),
-        ),
-      ],
+    return ListTile(
+      leading: Icon(icon, color: Theme.of(context).textTheme.titleMedium?.color, size: 40),
+      title: Text(title, style: AppStyles.styleBold28(context)),
+      subtitle: Text(description, style: AppStyles.styleRegular18(context)),
     );
   }
 }

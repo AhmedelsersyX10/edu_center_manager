@@ -9,21 +9,26 @@ class CustomAddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
+    return ElevatedButton(
       onPressed: onAdd,
-      icon: const Icon(Icons.add_circle_outline_sharp, size: 20),
-      label: Text(
-        text,
-        style: AppStyles.styleBold18(
-          context,
-        ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
-      ),
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 0,
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: AppStyles.styleBold18(
+              context,
+            ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
+          ),
+          const SizedBox(width: 8),
+          Icon(Icons.add_circle_outline_sharp, color: Theme.of(context).colorScheme.onPrimary),
+        ],
       ),
     );
   }

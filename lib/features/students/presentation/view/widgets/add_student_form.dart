@@ -70,6 +70,7 @@ class _StudentFormState extends State<StudentForm> {
 
   @override
   Widget build(BuildContext context) {
+    bool isEdit = widget.student != null;
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -78,7 +79,7 @@ class _StudentFormState extends State<StudentForm> {
       padding: EdgeInsets.only(
         left: 24,
         right: 24,
-        top: 24,
+        top: 16,
         bottom: MediaQuery.of(context).viewInsets.bottom + 24,
       ),
       child: Form(
@@ -87,8 +88,19 @@ class _StudentFormState extends State<StudentForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Center(
+                child: Container(
+                  width: 60,
+                  height: 4,
+                  margin: const EdgeInsets.only(bottom: 16),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+              ),
               Text(
-                'addNewStudent'.tr(),
+                isEdit ? 'editStudent'.tr() : 'addNewStudent'.tr(),
                 style: AppStyles.styleBold20(context),
                 textAlign: TextAlign.center,
               ),
@@ -133,6 +145,7 @@ class _StudentFormState extends State<StudentForm> {
   }
 
   ElevatedButton buildElevatedButton(BuildContext context) {
+    bool isEdit = widget.student != null;
     return ElevatedButton(
       onPressed: _isLoading ? null : _submit,
       style: ElevatedButton.styleFrom(
@@ -153,8 +166,8 @@ class _StudentFormState extends State<StudentForm> {
               ),
             )
           : Text(
-              'addStudent'.tr(),
-              style: AppStyles.styleBold16(
+              isEdit ? 'editStudent'.tr() : 'addNewStudent'.tr(),
+              style: AppStyles.styleBold18(
                 context,
               ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
             ),
@@ -189,6 +202,7 @@ class _StudentFormState extends State<StudentForm> {
       controller: controller,
       keyboardType: keyboardType,
       validator: validator,
+      maxLength: keyboardType == TextInputType.phone ? 11 : null,
       style: const TextStyle(fontFamily: 'cairo'),
       decoration: _inputDecoration(label, icon, context),
     );

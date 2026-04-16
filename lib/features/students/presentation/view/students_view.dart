@@ -15,7 +15,7 @@ class StudentsView extends StatelessWidget {
     SizeConfig.init(context);
 
     return BlocProvider(
-      create: (context) => StudentsCubit(StudentsRepoImpl()..getStudents()),
+      create: (context) => StudentsCubit(StudentsRepoImpl())..getStudents(),
       child: Scaffold(
         body: AdaptiveLayout(
           mobileLayout: (context) => StudentsViewBodyMobile(),

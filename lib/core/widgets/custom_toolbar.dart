@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:edu_center_manager/core/widgets/custom_add_button.dart';
 import 'package:edu_center_manager/core/widgets/custom_filter_dropdown.dart';
 import 'package:edu_center_manager/core/widgets/custom_search_field.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +27,6 @@ class CustomToolbar extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        CustomAddButton(text: text, onAdd: onAdd),
-        const SizedBox(height: 12),
         Row(
           children: [
             Expanded(

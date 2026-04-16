@@ -13,7 +13,7 @@ class StudentsRepoImpl implements StudentsRepo {
     try {
       return await studentsService.getStudents();
     } catch (e) {
-      throw Exception('فشل في تحميل بيانات الطلاب: $e');
+      throw Exception('فشل في تحميل بيانات الطلاب');
     }
   }
 
@@ -22,7 +22,7 @@ class StudentsRepoImpl implements StudentsRepo {
     try {
       return await studentsService.addStudent(student);
     } catch (e) {
-      throw Exception('فشل في إضافة الطالب: $e');
+      throw Exception('فشل في إضافة الطالب');
     }
   }
 
@@ -31,7 +31,7 @@ class StudentsRepoImpl implements StudentsRepo {
     try {
       return await studentsService.updateStudent(student);
     } catch (e) {
-      throw Exception('فشل في تحديث بيانات الطالب: $e');
+      throw Exception('فشل في تحديث بيانات الطالب');
     }
   }
 
@@ -40,7 +40,7 @@ class StudentsRepoImpl implements StudentsRepo {
     try {
       return await studentsService.deleteStudent(id);
     } catch (e) {
-      throw Exception('فشل في حذف الطالب: $e');
+      throw Exception('فشل في حذف الطالب');
     }
   }
 }

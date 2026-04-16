@@ -22,7 +22,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular14(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -31,7 +31,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold14(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,
@@ -40,7 +40,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular16(context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -49,7 +49,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold16(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFF4EB7F2),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,
@@ -58,7 +58,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -76,7 +76,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular20(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -85,7 +85,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold20(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,
@@ -94,7 +94,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular24(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
@@ -103,8 +103,44 @@ abstract class AppStyles {
 
   static TextStyle styleBold24(BuildContext context) {
     return TextStyle(
-      color: const Color(0xFFFFFFFF),
+      color: Theme.of(context).textTheme.titleMedium?.color,
       fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w700,
+    );
+  }
+
+  static TextStyle styleRegular28(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).textTheme.titleMedium?.color,
+      fontSize: getResponsiveFontSize(context, fontSize: 28),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleBold28(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).textTheme.titleMedium?.color,
+      fontSize: getResponsiveFontSize(context, fontSize: 28),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w700,
+    );
+  }
+
+  static TextStyle styleRegular32(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).textTheme.titleMedium?.color,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontFamily: 'Montserrat',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleBold32(BuildContext context) {
+    return TextStyle(
+      color: Theme.of(context).textTheme.titleMedium?.color,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w700,
     );

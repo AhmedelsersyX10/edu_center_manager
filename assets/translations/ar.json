@@ -45,5 +45,13 @@
   "parentPhone": "رقم ولى الأمر",
   "invalidPhone": "رقم الهاتف غير صحيح",
   "grade": "الصف الدراسى",
-  "studentAddedSuccessfully": "تم إضافة الطالب بنجاح"
+  "studentAddedSuccessfully": "تم إضافة الطالب بنجاح",
+  "editStudent": "تعديل بيانات الطالب",
+  "confirmDelete": "تأكيد الحذف",
+  "deleteStudentConfirmMsg": "هل أنت متأكد من حذف هذا الطالب؟",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "studentsViewEmptyNone": "لا يوجد طلاب حالياً",
+  "studentUpdatedSuccessfully": "تم تحديث بيانات الطالب بنجاح",
+  "studentDeletedSuccessfully": "تم حذف الطالب {} بنجاح"
 }

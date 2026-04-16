@@ -45,5 +45,13 @@
   "address": "Address",
   "parentPhone": "Parent Phone",
   "invalidPhone": "Invalid phone number",
-  "grade": "Grade"
+  "grade": "Grade",
+  "editStudent": "Edit Student",
+  "confirmDelete": "Confirm Delete",
+  "deleteStudentConfirmMsg": "Are you sure you want to delete this student?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "studentsViewEmptyNone": "No students found",
+  "studentUpdatedSuccessfully": "Student updated successfully",
+  "studentDeletedSuccessfully": "Student {} deleted successfully"
 }
