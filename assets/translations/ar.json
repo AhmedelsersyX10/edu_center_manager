@@ -49,6 +49,7 @@
   "editStudent": "تعديل بيانات الطالب",
   "confirmDelete": "تأكيد الحذف",
   "deleteStudentConfirmMsg": "هل أنت متأكد من حذف هذا الطالب؟",
+  "actions": "الإجراءات",
   "cancel": "إلغاء",
   "delete": "حذف",
   "studentsViewEmptyNone": "لا يوجد طلاب حالياً",

@@ -1,5 +1,5 @@
-import 'package:edu_center_manager/features/students/presentation/view/widgets/custom_info_header_card.dart';
-import 'package:edu_center_manager/features/students/presentation/view/widgets/custom_info_row_card.dart';
+import 'package:edu_center_manager/core/widgets/custom_info_header_card.dart';
+import 'package:edu_center_manager/core/widgets/custom_info_row_card.dart';
 import 'package:edu_center_manager/features/students/presentation/view_model/grade_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:edu_center_manager/features/students/data/models/student_model.dart';

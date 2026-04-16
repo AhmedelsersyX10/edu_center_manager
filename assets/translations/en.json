@@ -49,6 +49,7 @@
   "editStudent": "Edit Student",
   "confirmDelete": "Confirm Delete",
   "deleteStudentConfirmMsg": "Are you sure you want to delete this student?",
+  "actions": "Actions",
   "cancel": "Cancel",
   "delete": "Delete",
   "studentsViewEmptyNone": "No students found",

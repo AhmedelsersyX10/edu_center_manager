@@ -4,13 +4,30 @@ import 'package:flutter/material.dart';
 
 Future<void> showStudentForm(
   BuildContext context, {
+  required bool isMobile,
   required Future<void> Function(StudentModel) onSubmit,
   StudentModel? student,
 }) {
-  return showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,
-    backgroundColor: Colors.transparent,
-    builder: (context) => StudentForm(onSubmit: onSubmit, student: student),
-  );
+  if (isMobile) {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => StudentForm(isMobile: true, onSubmit: onSubmit, student: student),
+    );
+  } else {
+    return showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) => Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: StudentForm(isMobile: false, onSubmit: onSubmit, student: student),
+        ),
+      ),
+    );
+  }
 }

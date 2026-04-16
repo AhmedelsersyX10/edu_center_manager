@@ -10,7 +10,7 @@ class StudentForm extends StatefulWidget {
   final Future<void> Function(StudentModel) onSubmit;
   final StudentModel? student;
 
-  const StudentForm({super.key, required this.onSubmit, this.student});
+  const StudentForm({super.key, required this.onSubmit, this.student, required bool isMobile});
 
   @override
   State<StudentForm> createState() => _StudentFormState();

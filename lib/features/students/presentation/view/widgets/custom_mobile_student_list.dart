@@ -5,8 +5,8 @@ import 'package:edu_center_manager/features/students/data/models/student_model.d
 import 'package:edu_center_manager/features/students/presentation/view/widgets/student_card.dart';
 import 'package:flutter/material.dart';
 
-class CustomMobileListView extends StatelessWidget {
-  const CustomMobileListView({
+class CustomMobileStudentList extends StatelessWidget {
+  const CustomMobileStudentList({
     super.key,
     required this.students,
     required this.onEdit,
