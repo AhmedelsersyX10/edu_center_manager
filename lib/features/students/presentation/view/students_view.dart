@@ -1,6 +1,6 @@
 import 'package:edu_center_manager/core/utils/size_config.dart';
 import 'package:edu_center_manager/core/widgets/adaptive_layout.dart';
-import 'package:edu_center_manager/features/students/data/repo/students_repo_impl.dart';
+import 'package:edu_center_manager/features/students/data/repo/injaction.dart';
 import 'package:edu_center_manager/features/students/presentation/view/widgets/students_view_body_desktop.dart';
 import 'package:edu_center_manager/features/students/presentation/view/widgets/students_view_body_mobile.dart';
 import 'package:edu_center_manager/features/students/presentation/view_model/students_cubit.dart';
@@ -15,7 +15,7 @@ class StudentsView extends StatelessWidget {
     SizeConfig.init(context);
 
     return BlocProvider(
-      create: (context) => StudentsCubit(StudentsRepoImpl())..getStudents(),
+      create: (context) => getIt<StudentsCubit>()..getStudents(),
       child: Scaffold(
         body: AdaptiveLayout(
           mobileLayout: (context) => StudentsViewBodyMobile(),

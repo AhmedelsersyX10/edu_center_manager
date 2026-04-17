@@ -27,8 +27,8 @@ class StudentsCubit extends Cubit<StudentsState> {
   Future<void> addStudent(StudentModel student) async {
     emit(StudentsLoading());
     try {
-      await studentsRepo.addStudent(student);
-      allStudents = await studentsRepo.getStudents();
+      final newStudent = await studentsRepo.addStudent(student);
+      allStudents.insert(0, newStudent);
       _emitLoadedState();
     } catch (e) {
       emit(StudentsError(_errorMessage(e)));
@@ -38,8 +38,8 @@ class StudentsCubit extends Cubit<StudentsState> {
   Future<void> updateStudent(StudentModel student) async {
     emit(StudentsLoading());
     try {
-      await studentsRepo.updateStudent(student);
-      allStudents = await studentsRepo.getStudents();
+      final newStudent = await studentsRepo.updateStudent(student);
+      allStudents[allStudents.indexWhere((element) => element.id == student.id)] = newStudent;
       _emitLoadedState();
     } catch (e) {
       emit(StudentsError(_errorMessage(e)));
@@ -50,7 +50,7 @@ class StudentsCubit extends Cubit<StudentsState> {
     emit(StudentsLoading());
     try {
       await studentsRepo.deleteStudent(id);
-      allStudents = await studentsRepo.getStudents();
+      allStudents.removeWhere((element) => element.id == id);
       _emitLoadedState();
     } catch (e) {
       emit(StudentsError(_errorMessage(e)));
