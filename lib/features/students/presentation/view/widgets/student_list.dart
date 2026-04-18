@@ -10,11 +10,13 @@ class StudentList extends StatelessWidget {
     required this.isLoading,
     required this.students,
     required this.allCount,
+    required this.searchQuary,
   });
 
   final bool isLoading;
   final List<StudentModel> students;
   final int allCount;
+  final String searchQuary;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class StudentList extends StatelessWidget {
         allCount: allCount,
         child: CustomMobileStudentList(
           students: students,
+          searchQuary: searchQuary,
           onEdit: (student) => onEditStudent(context, student, true),
           onDelete: (student) => onDeleteStudent(context, student),
           isLoading: isLoading,

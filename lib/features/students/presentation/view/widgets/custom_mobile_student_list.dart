@@ -12,18 +12,23 @@ class CustomMobileStudentList extends StatelessWidget {
     required this.onEdit,
     required this.onDelete,
     required this.isLoading,
+    required this.searchQuary,
   });
   final List<StudentModel> students;
   final Function(StudentModel) onEdit;
   final Function(StudentModel) onDelete;
   final bool isLoading;
+  final String searchQuary;
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
       return const ShimmerInfoCard();
     }
     if (students.isEmpty) {
-      return CustomEmptyState(text: 'studentsViewEmptyNone'.tr(), icon: Icons.groups_3_rounded);
+      return CustomEmptyState(
+        text: searchQuary.isEmpty ? 'studentsViewEmptyNone'.tr() : 'studentsViewEmptySearch'.tr(),
+        icon: Icons.groups_3_rounded,
+      );
     }
     return ListView.builder(
       itemCount: students.length,

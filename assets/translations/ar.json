@@ -53,6 +53,7 @@
   "cancel": "إلغاء",
   "delete": "حذف",
   "studentsViewEmptyNone": "لا يوجد طلاب حالياً",
+  "studentsViewEmptySearch": "لا يوجد طلاب يطابق البحث",
   "studentUpdatedSuccessfully": "تم تحديث بيانات الطالب بنجاح",
   "studentDeletedSuccessfully": "تم حذف الطالب {} بنجاح"
 }

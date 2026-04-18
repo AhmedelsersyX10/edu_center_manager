@@ -20,6 +20,7 @@ class StudentsViewBodyMobile extends StatelessWidget {
         final isLoading = state is StudentsLoading;
         final allCount = state is StudentsLoaded ? state.allStudents.length : 0;
         final students = state is StudentsLoaded ? state.filteredStudents : <StudentModel>[];
+        final searchQuary = state is StudentsLoaded ? state.searchQuery : '';
         return ConnectivityWrapper(
           onReconnected: () => context.read<StudentsCubit>().getStudents(),
           child: Padding(
@@ -31,7 +32,12 @@ class StudentsViewBodyMobile extends StatelessWidget {
                 const SizedBox(height: 16),
                 StudentsToolbar(selectedGrade: selectedGrade, isMobile: true),
                 const SizedBox(height: 16),
-                StudentList(isLoading: isLoading, students: students, allCount: allCount),
+                StudentList(
+                  isLoading: isLoading,
+                  students: students,
+                  allCount: allCount,
+                  searchQuary: searchQuary,
+                ),
               ],
             ),
           ),

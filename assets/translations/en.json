@@ -53,6 +53,7 @@
   "cancel": "Cancel",
   "delete": "Delete",
   "studentsViewEmptyNone": "No students found",
+  "studentsViewEmptySearch": "No students found matching the search",
   "studentUpdatedSuccessfully": "Student updated successfully",
   "studentDeletedSuccessfully": "Student {} deleted successfully"
 }
