@@ -31,7 +31,7 @@ class TeachersViewBodyMobile extends StatelessWidget {
               children: [
                 TeachersHeader(isMobile: true),
                 const SizedBox(height: 16),
-                TeacherToolbar(selecteSubject: selecteSubject, isMobile: true),
+                TeachersToolbar(selecteSubject: selecteSubject, isMobile: true),
                 const SizedBox(height: 16),
                 TeacherList(
                   isLoading: isLoading,

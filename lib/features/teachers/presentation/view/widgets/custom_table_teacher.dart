@@ -1,0 +1,113 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:edu_center_manager/core/utils/app_style.dart';
+import 'package:edu_center_manager/core/utils/app_themes.dart';
+import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
+import 'package:edu_center_manager/features/teachers/presentation/view_model/subject_helper.dart';
+import 'package:flutter/material.dart';
+
+class CustomTableTeacher extends StatelessWidget {
+  final List<TeacherModel> teachers;
+  final void Function(TeacherModel) onEdit;
+  final void Function(TeacherModel) onDelete;
+  final bool isLoading;
+
+  const CustomTableTeacher({
+    super.key,
+    required this.teachers,
+    required this.onEdit,
+    required this.onDelete,
+    this.isLoading = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Theme(
+        data: Theme.of(context).copyWith(dividerColor: AppColors.mistBlue.withValues(alpha: 0.5)),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minWidth: constraints.maxWidth),
+                child: DataTable(
+                  headingRowColor: WidgetStateProperty.all(
+                    Theme.of(context).colorScheme.surfaceContainer,
+                  ),
+                  dataRowMaxHeight: 64,
+                  dataRowMinHeight: 64,
+                  headingTextStyle: TextStyle(
+                    fontFamily: 'cairo',
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).textTheme.titleMedium?.color,
+                  ),
+                  columns: [
+                    DataColumn(label: Text('teacherName'.tr())),
+                    DataColumn(label: Text('subject'.tr())),
+                    DataColumn(label: Text('phone'.tr())),
+                    DataColumn(label: Text('actions'.tr())),
+                  ],
+                  rows: teachers.map((teacher) => _buildRow(teacher, context)).toList(),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  DataRow _buildRow(TeacherModel teacher, BuildContext context) {
+    return DataRow(
+      cells: [
+        DataCell(Text(teacher.name, style: AppStyles.styleBold16(context))),
+        DataCell(
+          Text(
+            SubjectHelper.translateSubject(teacher.subject),
+            style: AppStyles.styleRegular16(context),
+          ),
+        ),
+        DataCell(
+          Text(
+            teacher.phone?.isNotEmpty == true ? teacher.phone! : '—',
+            style: AppStyles.styleRegular16(context),
+          ),
+        ),
+        DataCell(
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: Icon(
+                  Icons.edit_outlined,
+                  color: Theme.of(context).colorScheme.primary,
+                  size: 20,
+                ),
+                onPressed: () => onEdit(teacher),
+                tooltip: 'edit'.tr(),
+              ),
+              IconButton(
+                icon: Icon(Icons.delete_outline, color: Colors.red, size: 20),
+                onPressed: () => onDelete(teacher),
+                tooltip: 'delete'.tr(),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

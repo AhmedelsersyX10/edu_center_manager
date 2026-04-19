@@ -114,8 +114,6 @@ class _TeacherFormState extends State<TeacherForm> {
               const SizedBox(height: 16),
               buildDropdownSubject(context),
               const SizedBox(height: 16),
-
-              const SizedBox(height: 16),
               _buildTextField(
                 controller: phoneController,
                 label: 'teacherPhone'.tr(),

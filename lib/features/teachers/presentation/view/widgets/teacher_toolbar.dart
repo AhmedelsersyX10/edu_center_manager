@@ -6,8 +6,8 @@ import 'package:edu_center_manager/features/teachers/presentation/view_model/tea
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TeacherToolbar extends StatelessWidget {
-  const TeacherToolbar({super.key, required this.selecteSubject, required this.isMobile});
+class TeachersToolbar extends StatelessWidget {
+  const TeachersToolbar({super.key, required this.selecteSubject, required this.isMobile});
 
   final String selecteSubject;
   final bool isMobile;

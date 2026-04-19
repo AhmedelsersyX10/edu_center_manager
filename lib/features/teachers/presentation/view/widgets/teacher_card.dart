@@ -40,7 +40,7 @@ class TeacherCard extends StatelessWidget {
             const SizedBox(height: 12),
             CustomInfoRowCard(
               icon: Icons.class_outlined,
-              text: SubjectHelper.translateGrade(teacher.subject),
+              text: SubjectHelper.translateSubject(teacher.subject),
               context: context,
             ),
             const SizedBox(height: 8),

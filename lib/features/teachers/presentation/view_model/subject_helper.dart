@@ -73,7 +73,7 @@ class SubjectHelper {
     }
   }
 
-  static String translateGrade(String? subject) {
+  static String translateSubject(String? subject) {
     if (subject == null || subject == '--') return '--';
     return subjectKeys(subject).tr();
   }
