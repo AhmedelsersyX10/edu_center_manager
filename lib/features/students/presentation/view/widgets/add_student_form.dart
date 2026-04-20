@@ -56,7 +56,7 @@ class _StudentFormState extends State<StudentForm> {
         name: nameController.text.trim(),
         address: addressController.text.trim(),
         parentPhone: phoneController.text.trim(),
-        grade: selectedGrade ?? '',
+        grade: selectedGrade ?? '--',
       );
 
       await widget.onSubmit(newStudent);
@@ -119,7 +119,7 @@ class _StudentFormState extends State<StudentForm> {
               const SizedBox(height: 16),
               _buildTextField(
                 controller: addressController,
-                label: 'address'.tr(),
+                label: 'addressOptional'.tr(),
                 icon: Icons.location_on_outlined,
               ),
               const SizedBox(height: 16),
@@ -129,7 +129,10 @@ class _StudentFormState extends State<StudentForm> {
                 icon: Icons.phone_outlined,
                 keyboardType: TextInputType.phone,
                 validator: (value) {
-                  if (value != null && value.isNotEmpty && value.length < 11) {
+                  if (value == null ||
+                      value.isEmpty ||
+                      value.length < 11 ||
+                      !value.startsWith('01')) {
                     return 'invalidPhone'.tr();
                   }
                   return null;
@@ -188,6 +191,12 @@ class _StudentFormState extends State<StudentForm> {
           .toList(),
       onChanged: (val) => setState(() => selectedGrade = val),
       icon: Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.primary),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'gradeRequired'.tr();
+        }
+        return null;
+      },
     );
   }
 
@@ -211,8 +220,9 @@ class _StudentFormState extends State<StudentForm> {
   InputDecoration _inputDecoration(String label, IconData icon, BuildContext context) {
     return InputDecoration(
       labelText: label,
-      labelStyle: AppStyles.styleRegular14(context),
+      labelStyle: AppStyles.styleRegular14(context).copyWith(color: AppColors.silverBlue),
       prefixIcon: Icon(icon, color: AppColors.silverBlue),
+      errorStyle: AppStyles.styleRegular14(context).copyWith(color: Colors.redAccent),
       filled: true,
       fillColor: Theme.of(context).cardColor,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),

@@ -51,7 +51,7 @@ class _TeacherFormState extends State<TeacherForm> {
       final newTeacher = TeacherModel(
         id: widget.teacher?.id ?? const Uuid().v4(),
         name: nameController.text.trim(),
-        subject: selectedSubject ?? '',
+        subject: selectedSubject ?? '--',
         phone: phoneController.text.trim(),
         userId: widget.teacher?.userId,
       );
@@ -120,7 +120,10 @@ class _TeacherFormState extends State<TeacherForm> {
                 icon: Icons.phone_outlined,
                 keyboardType: TextInputType.phone,
                 validator: (value) {
-                  if (value != null && value.isNotEmpty && value.length < 11) {
+                  if (value == null ||
+                      value.isEmpty ||
+                      value.length < 11 ||
+                      !value.startsWith('01')) {
                     return 'invalidPhone'.tr();
                   }
                   return null;
@@ -179,6 +182,12 @@ class _TeacherFormState extends State<TeacherForm> {
           .toList(),
       onChanged: (val) => setState(() => selectedSubject = val),
       icon: Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.primary),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'subjectRequired'.tr();
+        }
+        return null;
+      },
     );
   }
 
@@ -204,6 +213,7 @@ class _TeacherFormState extends State<TeacherForm> {
       labelText: label,
       labelStyle: AppStyles.styleRegular14(context),
       prefixIcon: Icon(icon, color: AppColors.silverBlue),
+      errorStyle: AppStyles.styleRegular14(context).copyWith(color: Colors.redAccent),
       filled: true,
       fillColor: Theme.of(context).cardColor,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),

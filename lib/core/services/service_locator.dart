@@ -1,7 +1,10 @@
-import 'package:edu_center_manager/features/students/data/repo/students_injaction.dart';
-import 'package:edu_center_manager/features/teachers/data/repo/teachers_injaction.dart';
+import 'package:edu_center_manager/features/students/data/repo/students_injection.dart';
+import 'package:edu_center_manager/features/teachers/data/repo/teachers_injection.dart';
+import 'package:get_it/get_it.dart';
+
+final getIt = GetIt.instance;
 
 void setupServiceLocator() {
-  studentsGetIt();
-  teachersGetIt();
+  studentsGetIt(getIt);
+  teachersGetIt(getIt);
 }

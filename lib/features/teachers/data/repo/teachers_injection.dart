@@ -4,9 +4,8 @@ import 'package:edu_center_manager/features/teachers/data/service/teacher_servic
 import 'package:edu_center_manager/features/teachers/presentation/view_model/teacher_cubit.dart';
 import 'package:get_it/get_it.dart';
 
-final getIt = GetIt.instance;
 
-void teachersGetIt() {
+void teachersGetIt(GetIt getIt) {
   getIt.registerLazySingleton<TeacherService>(() => TeacherService());
   getIt.registerLazySingleton<TeacherRepo>(
     () => TeacherRepoImpl(teacherService: getIt<TeacherService>()),

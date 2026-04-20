@@ -1,6 +1,6 @@
+import 'package:edu_center_manager/core/services/service_locator.dart';
 import 'package:edu_center_manager/core/utils/size_config.dart';
 import 'package:edu_center_manager/core/widgets/adaptive_layout.dart';
-import 'package:edu_center_manager/features/students/data/repo/students_injaction.dart';
 import 'package:edu_center_manager/features/students/presentation/view/widgets/students_view_body_desktop.dart';
 import 'package:edu_center_manager/features/students/presentation/view/widgets/students_view_body_mobile.dart';
 import 'package:edu_center_manager/features/students/presentation/view_model/students_cubit.dart';
