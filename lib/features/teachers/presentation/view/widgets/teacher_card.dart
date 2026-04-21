@@ -1,3 +1,4 @@
+import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/core/widgets/custom_info_header_card.dart';
 import 'package:edu_center_manager/core/widgets/custom_info_row_card.dart';
 import 'package:edu_center_manager/features/teachers/presentation/view_model/subject_helper.dart';
@@ -21,15 +22,8 @@ class TeacherCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 10,
-            offset: const Offset(4, 4),
-          ),
-        ],
+        color: context.colors.cardBackground,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

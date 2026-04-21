@@ -7,4 +7,5 @@ enum DrawerPage {
   payments,
   paymentsReport,
   attendReport,
+  settings,
 }

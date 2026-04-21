@@ -5,11 +5,7 @@ extension ContextExt on BuildContext {
   void showErrorMessage(String message) {
     ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
-        content: Text(
-          message,
-          style: AppStyles.styleBold18(this).copyWith(color: Theme.of(this).colorScheme.onPrimary),
-        ),
-        backgroundColor: Colors.red,
+        content: Text(message, style: AppStyles.styleBold18(this)),
       ),
     );
   }

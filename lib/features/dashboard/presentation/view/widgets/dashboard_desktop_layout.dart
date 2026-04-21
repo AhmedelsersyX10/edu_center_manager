@@ -6,6 +6,7 @@ import 'package:edu_center_manager/core/widgets/custom_drawer.dart';
 import 'package:edu_center_manager/features/groups/presentation/view/groups_view.dart';
 import 'package:edu_center_manager/features/payments/presentation/view/payments_view.dart';
 import 'package:edu_center_manager/features/payments/presentation/view/widgets/payment_report_view.dart';
+import 'package:edu_center_manager/features/settings/presentation/view/settings_view.dart';
 import 'package:edu_center_manager/features/students/presentation/view/students_view.dart';
 import 'package:edu_center_manager/features/teachers/presentation/view/teachers_view.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class _DashboardDesktopLayoutState extends State<DashboardDesktopLayout> {
       DrawerPage.payments => const PaymentsView(),
       DrawerPage.paymentsReport => const PaymentReportView(),
       DrawerPage.attendReport => const AttendanceReportView(),
+      DrawerPage.settings => const SettingsView(),
     };
   }
 

@@ -11,7 +11,7 @@ void onSearchStudent(BuildContext context, String query) {
   context.read<StudentsCubit>().searchStudents(query);
 }
 
-void onAddStudent(BuildContext context,bool isMobile) {
+void onAddStudent(BuildContext context, bool isMobile) {
   showStudentForm(
     context,
     isMobile: isMobile,
@@ -20,12 +20,7 @@ void onAddStudent(BuildContext context,bool isMobile) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'studentAddedSuccessfully'.tr(),
-              style: AppStyles.styleBold16(
-                context,
-              ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
-            ),
+            content: Text('studentAddedSuccessfully'.tr(), style: AppStyles.styleBold16(context)),
           ),
         );
       }
@@ -33,7 +28,7 @@ void onAddStudent(BuildContext context,bool isMobile) {
   );
 }
 
-void onEditStudent(BuildContext context, StudentModel student,bool isMobile) {
+void onEditStudent(BuildContext context, StudentModel student, bool isMobile) {
   showStudentForm(
     context,
     isMobile: isMobile,
@@ -43,12 +38,7 @@ void onEditStudent(BuildContext context, StudentModel student,bool isMobile) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'studentUpdatedSuccessfully'.tr(),
-              style: AppStyles.styleBold18(
-                context,
-              ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
-            ),
+            content: Text('studentUpdatedSuccessfully'.tr(), style: AppStyles.styleBold18(context)),
           ),
         );
       }
@@ -69,9 +59,7 @@ void onDeleteStudent(BuildContext context, StudentModel student) {
             SnackBar(
               content: Text(
                 'studentDeletedSuccessfully'.tr(args: [student.name]),
-                style: AppStyles.styleBold18(
-                  context,
-                ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
+                style: AppStyles.styleBold18(context),
               ),
             ),
           );

@@ -21,7 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   void initState() {
     super.initState();
 
-    _animationController = AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    _animationController = AnimationController(duration: const Duration(seconds: 1), vsync: this);
 
     // Fade animation - starts immediately
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -60,37 +60,28 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xFFF8F9FA), Color(0xFFFFFFFF)],
-          ),
-        ),
-        child: Center(
-          child: AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              return Transform.translate(
-                offset: Offset(0, _slideAnimation.value),
-                child: Transform.scale(
-                  scale: _scaleAnimation.value,
-                  child: Opacity(
-                    opacity: _fadeAnimation.value,
-                    child: Image.asset(Assets.logo, width: 250, height: 250),
-                  ),
+      body: Center(
+        child: AnimatedBuilder(
+          animation: _animationController,
+          builder: (context, child) {
+            return Transform.translate(
+              offset: Offset(0, _slideAnimation.value),
+              child: Transform.scale(
+                scale: _scaleAnimation.value,
+                child: Opacity(
+                  opacity: _fadeAnimation.value,
+                  child: Image.asset(Assets.logo, width: 250, height: 250),
                 ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 4), () async {
+    Future.delayed(const Duration(seconds: 2), () async {
       if (!mounted) return;
 
       final prefs = await SharedPreferences.getInstance();
@@ -99,17 +90,17 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
       if (!mounted) return;
       if (!isLoggedIn) {
-        GoRouter.of(context).go(AppRouter.kLoginView);
+        GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
         return;
       }
 
       switch (role) {
         case 'admin':
         case 'teacher':
-          GoRouter.of(context).go(AppRouter.kDashboardView);
+          GoRouter.of(context).pushReplacement(AppRouter.kDashboardView);
           break;
         default:
-          GoRouter.of(context).go(AppRouter.kLoginView);
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
       }
     });
   }

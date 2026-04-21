@@ -1,3 +1,4 @@
+import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/core/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
@@ -18,18 +19,16 @@ class CustomFilterDropdown extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.onPrimary,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Theme.of(context).colorScheme.primary),
+        color: context.colors.cardBackground,
+        border: Border.all(color: context.colors.border),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
           value: selected,
           isExpanded: true,
-          icon: Icon(Icons.filter_list, color: Theme.of(context).colorScheme.primary),
-          style: AppStyles.styleRegular14(
-            context,
-          ).copyWith(color: Theme.of(context).colorScheme.primary),
+          icon: const Icon(Icons.filter_list),
+          style: AppStyles.styleRegular14(context).copyWith(color: context.colors.hintText),
           onChanged: onChanged,
           items: list,
         ),

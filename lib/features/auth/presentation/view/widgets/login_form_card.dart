@@ -27,7 +27,7 @@ class LoginFormCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 24),
       padding: padding,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: showShadow
             ? [
@@ -50,8 +50,7 @@ class LoginFormCard extends StatelessWidget {
             children: [
               Text(
                 'enterYourEmailAndPasswordToLogIn'.tr(),
-
-                style: AppStyles.styleRegular16(context).copyWith(color: Colors.grey),
+                style: AppStyles.styleRegular16(context),
               ),
               const SizedBox(height: 32),
               // Email Field
@@ -68,10 +67,7 @@ class LoginFormCard extends StatelessWidget {
                 prefixIcon: Icons.lock_outline,
                 obscureText: isObscure,
                 suffixIcon: IconButton(
-                  icon: Icon(
-                    isObscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                    color: Colors.grey,
-                  ),
+                  icon: Icon(isObscure ? Icons.visibility_off_outlined : Icons.visibility_outlined),
                   onPressed: () => cubit.toggleObscure(),
                 ),
               ),
@@ -80,8 +76,6 @@ class LoginFormCard extends StatelessWidget {
               ElevatedButton(
                 onPressed: isLoading ? null : () => cubit.login(context),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2F69F8),
-                  foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   elevation: 0,
@@ -90,12 +84,9 @@ class LoginFormCard extends StatelessWidget {
                     ? const SizedBox(
                         height: 24,
                         width: 24,
-                        child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
+                        child: CircularProgressIndicator(strokeWidth: 2),
                       )
-                    : Text(
-                        'logIn'.tr(),
-                        style: AppStyles.styleBold18(context).copyWith(color: Colors.white),
-                      ),
+                    : Text('logIn'.tr(), style: AppStyles.styleBold18(context)),
               ),
             ],
           );
@@ -127,23 +118,12 @@ class _LoginTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         label: Text(label),
-        labelStyle: TextStyle(color: Colors.grey.shade400),
         filled: true,
-        fillColor: Colors.grey.shade50,
-        prefixIcon: Icon(prefixIcon, color: Colors.grey),
+        prefixIcon: Icon(prefixIcon),
         suffixIcon: suffixIcon,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.grey.shade200),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: Colors.grey.shade200),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Color(0xFF2F69F8)),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
   }

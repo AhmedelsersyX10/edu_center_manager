@@ -16,7 +16,7 @@ class CustomInfoRowCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, size: 16, color: Theme.of(context).colorScheme.primary),
+        Icon(icon, size: 16,),
         const SizedBox(width: 8),
         Expanded(child: Text(text, style: AppStyles.styleRegular16(context))),
       ],

@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:edu_center_manager/core/utils/app_style.dart';
-import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
 import 'package:edu_center_manager/features/teachers/presentation/view_model/subject_helper.dart';
 import 'package:flutter/material.dart';
@@ -24,19 +23,11 @@ class CustomTableTeacher extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
       clipBehavior: Clip.antiAlias,
       child: Theme(
-        data: Theme.of(context).copyWith(dividerColor: AppColors.mistBlue.withValues(alpha: 0.5)),
+        data: Theme.of(context),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return SingleChildScrollView(
@@ -44,15 +35,11 @@ class CustomTableTeacher extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: BoxConstraints(minWidth: constraints.maxWidth),
                 child: DataTable(
-                  headingRowColor: WidgetStateProperty.all(
-                    Theme.of(context).colorScheme.surfaceContainer,
-                  ),
                   dataRowMaxHeight: 64,
                   dataRowMinHeight: 64,
-                  headingTextStyle: TextStyle(
+                  headingTextStyle: const TextStyle(
                     fontFamily: 'cairo',
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).textTheme.titleMedium?.color,
                   ),
                   columns: [
                     DataColumn(label: Text('teacherName'.tr())),
@@ -91,16 +78,12 @@ class CustomTableTeacher extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                icon: Icon(
-                  Icons.edit_outlined,
-                  color: Theme.of(context).colorScheme.primary,
-                  size: 20,
-                ),
+                icon: const Icon(Icons.edit_outlined, size: 20),
                 onPressed: () => onEdit(teacher),
                 tooltip: 'edit'.tr(),
               ),
               IconButton(
-                icon: const Icon(Icons.delete_outline, color: Colors.red, size: 20),
+                icon: const Icon(Icons.delete_outline, size: 20),
                 onPressed: () => onDelete(teacher),
                 tooltip: 'delete'.tr(),
               ),

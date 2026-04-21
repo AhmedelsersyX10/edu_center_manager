@@ -9,8 +9,7 @@ class NoInternetWidget extends StatefulWidget {
   State<NoInternetWidget> createState() => _NoInternetWidgetState();
 }
 
-class _NoInternetWidgetState extends State<NoInternetWidget>
-    with SingleTickerProviderStateMixin {
+class _NoInternetWidgetState extends State<NoInternetWidget> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnim;
   late Animation<double> _fadeAnim;
@@ -18,10 +17,7 @@ class _NoInternetWidgetState extends State<NoInternetWidget>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 700),
-    );
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
     _scaleAnim = CurvedAnimation(parent: _controller, curve: Curves.elasticOut);
     _fadeAnim = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _controller.forward();
@@ -47,37 +43,17 @@ class _NoInternetWidgetState extends State<NoInternetWidget>
               child: Container(
                 width: 100,
                 height: 100,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: colorScheme.errorContainer.withOpacity(0.15),
-                  border: Border.all(
-                    color: colorScheme.error.withOpacity(0.3),
-                    width: 2,
-                  ),
-                ),
-                child: Icon(
-                  Icons.wifi_off_rounded,
-                  size: 52,
-                  color: colorScheme.error,
-                ),
+                decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(width: 2)),
+                child: const Icon(Icons.wifi_off_rounded, size: 52),
               ),
             ),
             const SizedBox(height: 24),
             Text(
               'لا يوجد اتصال بالإنترنت',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
-                  ),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Text(
-              'سيتم التحديث تلقائياً عند عودة الاتصال',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: colorScheme.onSurface.withOpacity(0.55),
-                  ),
-              textAlign: TextAlign.center,
-            ),
+            const Text('سيتم التحديث تلقائياً عند عودة الاتصال', textAlign: TextAlign.center),
             if (widget.onRetry != null) ...[
               const SizedBox(height: 28),
               FilledButton.icon(
@@ -85,15 +61,8 @@ class _NoInternetWidgetState extends State<NoInternetWidget>
                 icon: const Icon(Icons.refresh_rounded),
                 label: const Text('إعادة المحاولة'),
                 style: FilledButton.styleFrom(
-                  backgroundColor: colorScheme.primary,
-                  foregroundColor: colorScheme.onPrimary,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 28,
-                    vertical: 14,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
               ),
             ],

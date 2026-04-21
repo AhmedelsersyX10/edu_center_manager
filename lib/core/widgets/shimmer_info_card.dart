@@ -16,10 +16,7 @@ class ShimmerInfoCard extends StatelessWidget {
             highlightColor: Colors.grey[100]!,
             child: Container(
               height: 132,
-              decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(12),
-              ),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
             ),
           ),
         );

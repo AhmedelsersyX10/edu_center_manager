@@ -5,7 +5,7 @@ class LoginBackgroundPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.white.withOpacity(0.1)
+      ..color = Colors.white.withOpacity(0.9)
       ..strokeWidth = 1.0;
 
     const double spacing = 30.0;
@@ -22,7 +22,7 @@ class LoginBackgroundPainter extends CustomPainter {
 
     // Draw sparkles
     final random = Random(42);
-    final sparklePaint = Paint()..color = Colors.white.withOpacity(0.3);
+    final sparklePaint = Paint()..color = Colors.white.withOpacity(0.8);
     for (int i = 0; i < 50; i++) {
       double x = random.nextDouble() * size.width;
       double y = random.nextDouble() * size.height;

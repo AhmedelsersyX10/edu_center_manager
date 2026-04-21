@@ -10,20 +10,18 @@ class LoginViewBodyDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF7F8FA),
       body: Row(
         children: [
           // الجانب الأيسر الأبيض الفارغ (Desktop فقط)
-          Expanded(flex: 1, child: Container(color: Colors.white)),
+          Expanded(flex: 1, child: Container()),
           // القسم الأزرق المركزي مع الفورم بداخله
           Expanded(
             flex: 2,
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   height: double.infinity,
                   width: double.infinity,
-                  color: const Color(0xFF2F69F8),
                   child: CustomPaint(painter: LoginBackgroundPainter()),
                 ),
                 SingleChildScrollView(
@@ -34,21 +32,17 @@ class LoginViewBodyDesktop extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const SizedBox(height: 8),
-                          Image.asset(Assets.logo, height: 140, color: Colors.white),
+                          Image.asset(Assets.logo, height: 140),
                           const SizedBox(height: 24),
                           Text(
                             'Login to your Account',
                             textAlign: TextAlign.center,
-                            style: AppStyles.styleBold24(
-                              context,
-                            ).copyWith(color: Colors.white, fontSize: 28),
+                            style: AppStyles.styleBold24(context),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             'Enter your email and password to log in',
-                            style: AppStyles.styleRegular14(
-                              context,
-                            ).copyWith(color: Colors.white.withOpacity(0.8)),
+                            style: AppStyles.styleRegular14(context),
                           ),
                         ],
                       ),
@@ -67,7 +61,7 @@ class LoginViewBodyDesktop extends StatelessWidget {
             ),
           ),
           // الجانب الأيمن الأبيض الفارغ (Desktop فقط)
-          Expanded(flex: 1, child: Container(color: Colors.white)),
+          Expanded(flex: 1, child: Container()),
         ],
       ),
     );

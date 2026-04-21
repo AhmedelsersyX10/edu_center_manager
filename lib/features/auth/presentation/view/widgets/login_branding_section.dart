@@ -9,10 +9,9 @@ class LoginBrandingSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
-      color: const Color(0xFF2F69F8),
       child: CustomPaint(
         painter: LoginBackgroundPainter(),
         child: Column(
@@ -21,19 +20,17 @@ class LoginBrandingSection extends StatelessWidget {
               ? MainAxisAlignment.center
               : MainAxisAlignment.start,
           children: [
-            Image.asset(Assets.logo, height: 140, color: Colors.white),
+            Image.asset(Assets.logo, height: 140),
             const SizedBox(height: 24),
             Text(
               'Login to your Account',
               textAlign: TextAlign.center,
-              style: AppStyles.styleBold24(context).copyWith(color: Colors.white, fontSize: 32),
+              style: AppStyles.styleBold24(context).copyWith(fontSize: 32),
             ),
             const SizedBox(height: 8),
             Text(
               'Enter your email and password to log in',
-              style: AppStyles.styleRegular14(
-                context,
-              ).copyWith(color: Colors.white.withOpacity(0.8)),
+              style: AppStyles.styleRegular14(context),
             ),
             const SizedBox(height: 40),
           ],

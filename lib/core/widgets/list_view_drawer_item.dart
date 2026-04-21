@@ -22,7 +22,7 @@ class ListViewDrawerItem extends StatefulWidget {
 
 class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
   final List<DrawerItemModel> drawerItems = [
-    DrawerItemModel(title: 'dashboard'.tr(), icon: Icons.dashboard_outlined),
+    DrawerItemModel(title: 'home'.tr(), icon: Icons.dashboard_outlined),
     DrawerItemModel(title: 'studentsManagement'.tr(), icon: Icons.person_4_sharp),
     DrawerItemModel(title: 'teachersManagement'.tr(), icon: Icons.co_present_outlined),
     DrawerItemModel(title: 'groupsManagement'.tr(), icon: Icons.groups_2),
@@ -30,6 +30,7 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
     DrawerItemModel(title: 'paymentsManagement'.tr(), icon: Icons.payments_outlined),
     DrawerItemModel(title: 'paymentsReport'.tr(), icon: Icons.receipt_long_outlined),
     DrawerItemModel(title: 'attendanceReport'.tr(), icon: Icons.report_outlined),
+    DrawerItemModel(title: 'settings'.tr(), icon: Icons.settings),
   ];
 
   final List<DrawerPage> drawerPages = [
@@ -41,6 +42,7 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
     DrawerPage.payments,
     DrawerPage.paymentsReport,
     DrawerPage.attendReport,
+    DrawerPage.settings,
   ];
 
   @override
@@ -50,7 +52,7 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
     final filteredItems = <DrawerItemModel>[];
     final filteredPages = <DrawerPage>[];
 
-    for (int i = 1; i < drawerItems.length; i++) {
+    for (int i = 0; i < drawerItems.length; i++) {
       if (widget.isMobile) {
         if (drawerPages[i] == DrawerPage.students ||
             drawerPages[i] == DrawerPage.teachers ||
@@ -76,7 +78,7 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
             }
           },
           child: Padding(
-            padding: const EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.symmetric(vertical: 24),
             child: DrawerItem(
               drawerItemModel: filteredItems[index],
               isSelected: widget.activePage == filteredPages[index],

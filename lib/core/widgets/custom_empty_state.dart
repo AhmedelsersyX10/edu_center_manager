@@ -16,11 +16,8 @@ class CustomEmptyState extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(32),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.05),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, size: 80, color: Theme.of(context).colorScheme.primary),
+              decoration: const BoxDecoration(shape: BoxShape.circle),
+              child: Icon(icon, size: 80),
             ),
             const SizedBox(height: 32),
             Text(text.tr(), style: AppStyles.styleBold20(context), textAlign: TextAlign.center),

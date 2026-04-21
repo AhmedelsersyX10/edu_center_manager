@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:edu_center_manager/core/utils/app_style.dart';
-import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/features/students/data/models/student_model.dart';
 import 'package:edu_center_manager/features/students/presentation/view_model/grade_helper.dart';
 import 'package:flutter/material.dart';
@@ -72,9 +71,8 @@ class _StudentFormState extends State<StudentForm> {
   Widget build(BuildContext context) {
     bool isEdit = widget.student != null;
     return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       padding: EdgeInsets.only(
         left: 24,
@@ -93,10 +91,7 @@ class _StudentFormState extends State<StudentForm> {
                   width: 60,
                   height: 4,
                   margin: const EdgeInsets.only(bottom: 16),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
                 ),
               ),
               Text(
@@ -153,26 +148,14 @@ class _StudentFormState extends State<StudentForm> {
       onPressed: _isLoading ? null : _submit,
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(vertical: 16),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 0,
-        disabledBackgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
       ),
       child: _isLoading
-          ? SizedBox(
-              height: 20,
-              width: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-            )
+          ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
           : Text(
               isEdit ? 'editStudent'.tr() : 'addNewStudent'.tr(),
-              style: AppStyles.styleBold18(
-                context,
-              ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
+              style: AppStyles.styleBold18(context),
             ),
     );
   }
@@ -190,7 +173,7 @@ class _StudentFormState extends State<StudentForm> {
           )
           .toList(),
       onChanged: (val) => setState(() => selectedGrade = val),
-      icon: Icon(Icons.arrow_drop_down, color: Theme.of(context).colorScheme.primary),
+      icon: const Icon(Icons.arrow_drop_down),
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'gradeRequired'.tr();
@@ -220,32 +203,11 @@ class _StudentFormState extends State<StudentForm> {
   InputDecoration _inputDecoration(String label, IconData icon, BuildContext context) {
     return InputDecoration(
       labelText: label,
-      labelStyle: AppStyles.styleRegular14(context).copyWith(color: AppColors.silverBlue),
-      prefixIcon: Icon(icon, color: AppColors.silverBlue),
-      errorStyle: AppStyles.styleRegular14(context).copyWith(color: Colors.redAccent),
+      labelStyle: AppStyles.styleRegular14(context),
+      prefixIcon: Icon(icon),
+      errorStyle: AppStyles.styleRegular14(context),
       filled: true,
-      fillColor: Theme.of(context).cardColor,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide.none,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: const BorderSide(color: AppColors.mistBlue),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: const BorderSide(color: AppColors.skyBright),
-      ),
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: const BorderSide(color: Colors.redAccent),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: const BorderSide(color: Colors.redAccent, width: 2),
-      ),
     );
   }
 }

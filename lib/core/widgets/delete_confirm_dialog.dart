@@ -20,36 +20,26 @@ class DeleteConfirmDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       title: Row(
         children: [
-          const Icon(Icons.warning_amber_rounded, color: Colors.redAccent, size: 28),
+          const Icon(Icons.warning_amber_rounded, size: 28),
           const SizedBox(width: 12),
-          Text(title, style: AppStyles.styleBold18(context).copyWith(color: Colors.redAccent)),
+          Text(title, style: AppStyles.styleBold18(context)),
         ],
       ),
       content: Text(content, style: AppStyles.styleRegular16(context)),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
-          child: Text(
-            'cancel'.tr(),
-            style: AppStyles.styleBold16(
-              context,
-            ).copyWith(color: Theme.of(context).colorScheme.primary),
-          ),
+          child: Text('cancel'.tr(), style: AppStyles.styleBold16(context).copyWith()),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.redAccent,
-            foregroundColor: Colors.white,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
           onPressed: () {
             onConfirm();
             Navigator.of(context).pop(true);
           },
-          child: Text(
-            'delete'.tr(),
-            style: AppStyles.styleBold16(context).copyWith(color: Colors.white),
-          ),
+          child: Text('delete'.tr(), style: AppStyles.styleBold16(context)),
         ),
       ],
     );

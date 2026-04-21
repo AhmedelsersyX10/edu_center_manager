@@ -35,6 +35,8 @@ class _DashboardLayoutMobileState extends State<DashboardLayoutMobile> {
           return 'paymentsReport'.tr();
         case DrawerPage.attendReport:
           return 'attendanceReport'.tr();
+        case DrawerPage.settings:
+          return 'settings'.tr();
       }
     }
 

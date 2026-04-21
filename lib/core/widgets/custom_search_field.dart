@@ -1,3 +1,4 @@
+import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/core/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
@@ -12,22 +13,21 @@ class CustomSearchField extends StatelessWidget {
       onChanged: onSearch,
       decoration: InputDecoration(
         hintText: hintTextField,
+        fillColor: context.colors.cardBackground,
         hintStyle: AppStyles.styleRegular16(context),
-        prefixIcon: Icon(Icons.search, color: Theme.of(context).colorScheme.primary),
+        prefixIcon: const Icon(Icons.search),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        filled: true,
-        fillColor: Theme.of(context).cardColor,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+          borderSide: BorderSide(color: context.colors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
+          borderSide: BorderSide(color: context.colors.border),
         ),
       ),
     );

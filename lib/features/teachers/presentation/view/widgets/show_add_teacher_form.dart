@@ -12,7 +12,6 @@ Future<void> showTeacherForm(
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.transparent,
       builder: (context) => TeacherForm(isMobile: true, onSubmit: onSubmit, teacher: teacher),
     );
   } else {
@@ -21,7 +20,6 @@ Future<void> showTeacherForm(
       barrierDismissible: true,
       builder: (context) => Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        backgroundColor: Colors.transparent,
         elevation: 0,
         child: Container(
           constraints: const BoxConstraints(maxWidth: 500),

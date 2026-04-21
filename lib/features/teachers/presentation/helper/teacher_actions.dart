@@ -20,12 +20,7 @@ void onAddTeacher(BuildContext context, bool isMobile) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'teacherAddedSuccessfully'.tr(),
-              style: AppStyles.styleBold16(
-                context,
-              ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
-            ),
+            content: Text('teacherAddedSuccessfully'.tr(), style: AppStyles.styleBold16(context)),
           ),
         );
       }
@@ -43,12 +38,7 @@ void onEditTeacher(BuildContext context, TeacherModel teacher, bool isMobile) {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'teacherUpdatedSuccessfully'.tr(),
-              style: AppStyles.styleBold18(
-                context,
-              ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
-            ),
+            content: Text('teacherUpdatedSuccessfully'.tr(), style: AppStyles.styleBold18(context)),
           ),
         );
       }
@@ -69,9 +59,7 @@ void onDeleteTeacher(BuildContext context, TeacherModel teacher) {
             SnackBar(
               content: Text(
                 'teacherDeletedSuccessfully'.tr(args: [teacher.name]),
-                style: AppStyles.styleBold18(
-                  context,
-                ).copyWith(color: Theme.of(context).colorScheme.onPrimary),
+                style: AppStyles.styleBold18(context),
               ),
             ),
           );

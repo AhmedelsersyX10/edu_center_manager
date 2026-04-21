@@ -18,28 +18,17 @@ class CustomInfoHeaderCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(
-          child: Text(
-            item,
-            style: AppStyles.styleBold24(
-              context,
-            ).copyWith(color: Theme.of(context).colorScheme.primary),
-          ),
-        ),
+        Expanded(child: Text(item, style: AppStyles.styleBold24(context))),
         Row(
           children: [
             IconButton(
-              icon: Icon(
-                Icons.edit_outlined,
-                color: Theme.of(context).colorScheme.surface,
-                size: 20,
-              ),
+              icon: const Icon(Icons.edit_outlined, size: 20),
               onPressed: onEdit,
               constraints: const BoxConstraints(),
               padding: const EdgeInsets.all(4),
             ),
             IconButton(
-              icon: const Icon(Icons.delete_outline, color: Colors.redAccent, size: 20),
+              icon: const Icon(Icons.delete_outline, size: 20),
               onPressed: onDelete,
               constraints: const BoxConstraints(),
               padding: const EdgeInsets.all(4),

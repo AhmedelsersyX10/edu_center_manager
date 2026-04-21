@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/features/attendance/presentation/view/attendance_view.dart';
 import 'package:edu_center_manager/features/dashboard/presentation/view/widgets/home_view.dart';
 import 'package:edu_center_manager/features/dashboard/presentation/view/widgets/reports_view.dart';
@@ -64,20 +65,20 @@ class RootViewState extends State<RootView> {
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.receipt_long_rounded),
         title: 'reports'.tr(),
-        activeColorPrimary: Colors.blue,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: context.colors.primaryButton,
+        inactiveColorPrimary: context.colors.primaryButton.withValues(alpha: 0.5),
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.dashboard_outlined),
         title: 'dashboard'.tr(),
-        activeColorPrimary: Colors.blue,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: context.colors.primaryButton,
+        inactiveColorPrimary: context.colors.primaryButton.withValues(alpha: 0.5),
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.settings_outlined),
         title: 'settings'.tr(),
-        activeColorPrimary: Colors.blue,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: context.colors.primaryButton,
+        inactiveColorPrimary: context.colors.primaryButton.withValues(alpha: 0.5),
       ),
     ];
   }
@@ -90,7 +91,6 @@ class RootViewState extends State<RootView> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       navBarStyle: NavBarStyle.style3,
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       onItemSelected: (index) {
         widget.onTabChanged?.call(index);
         if (index == 1) {
@@ -107,10 +107,7 @@ class RootViewState extends State<RootView> {
       resizeToAvoidBottomInset: true,
       stateManagement: true,
       hideNavigationBarWhenKeyboardAppears: true,
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10),
-        colorBehindNavBar: Colors.white,
-      ),
+      backgroundColor: context.colors.cardBackground,
     );
   }
 }

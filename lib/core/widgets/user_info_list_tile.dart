@@ -10,7 +10,6 @@ class UserInfoListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      // leading: Image.asset(userInfoModel.image, color: Colors.white),
       title: FittedBox(
         fit: BoxFit.scaleDown,
         alignment: Alignment.centerLeft,
