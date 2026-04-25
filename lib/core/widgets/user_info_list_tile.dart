@@ -12,13 +12,11 @@ class UserInfoListTile extends StatelessWidget {
     return ListTile(
       title: FittedBox(
         fit: BoxFit.scaleDown,
-        alignment: Alignment.centerLeft,
-        child: Text(userInfoModel.title, style: AppStyles.styleRegular20(context)),
+        child: Text(userInfoModel.title, style: AppStyles.styleBold16(context)),
       ),
       subtitle: FittedBox(
         fit: BoxFit.scaleDown,
-        alignment: Alignment.centerLeft,
-        child: Text(userInfoModel.subTitle, style: AppStyles.styleRegular18(context)),
+        child: Text(userInfoModel.subTitle, style: AppStyles.styleRegular14(context)),
       ),
     );
   }

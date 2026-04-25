@@ -12,13 +12,13 @@ class CustomAddButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onAdd,
       style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(text, style: AppStyles.styleBold18(context)),
+          Text(text, style: AppStyles.styleBold16(context)),
           const SizedBox(width: 8),
           const Icon(Icons.add_circle_outline_sharp),
         ],

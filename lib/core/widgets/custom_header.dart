@@ -14,9 +14,9 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: 40),
-      title: Text(title, style: AppStyles.styleBold28(context)),
-      subtitle: Text(description, style: AppStyles.styleRegular18(context)),
+      leading: Icon(icon, size: 32),
+      title: Text(title, style: AppStyles.styleBold24(context)),
+      subtitle: Text(description, style: AppStyles.styleRegular16(context)),
     );
   }
 }

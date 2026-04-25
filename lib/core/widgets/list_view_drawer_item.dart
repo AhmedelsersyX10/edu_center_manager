@@ -21,7 +21,7 @@ class ListViewDrawerItem extends StatefulWidget {
 }
 
 class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
-  final List<DrawerItemModel> drawerItems = [
+  List<DrawerItemModel> get drawerItems => [
     DrawerItemModel(title: 'home'.tr(), icon: Icons.dashboard_outlined),
     DrawerItemModel(title: 'studentsManagement'.tr(), icon: Icons.person_4_sharp),
     DrawerItemModel(title: 'teachersManagement'.tr(), icon: Icons.co_present_outlined),
@@ -33,7 +33,7 @@ class _ListViewDrawerItemState extends State<ListViewDrawerItem> {
     DrawerItemModel(title: 'settings'.tr(), icon: Icons.settings),
   ];
 
-  final List<DrawerPage> drawerPages = [
+  List<DrawerPage> get drawerPages => [
     DrawerPage.home,
     DrawerPage.students,
     DrawerPage.teachers,

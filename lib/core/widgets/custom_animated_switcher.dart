@@ -7,12 +7,14 @@ class CustomAnimatedSwitcher extends StatelessWidget {
     required this.items,
     required this.allCount,
     required this.child,
+    this.scheduleRowsCount,
   });
 
   final bool isLoading;
-  final List items;
+  final List<Object> items;
   final int allCount;
   final Widget child;
+  final int? scheduleRowsCount;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class CustomAnimatedSwitcher extends StatelessWidget {
         );
       },
       child: KeyedSubtree(
-        key: ValueKey<String>('${isLoading}_${items.length}_$allCount'),
+        key: ValueKey<String>('${isLoading}_${items.length}_${allCount}_$scheduleRowsCount'),
         child: child,
       ),
     );
