@@ -37,6 +37,7 @@ Future<void> showGroupForm(
             isMobile: false,
             onSubmit: onSubmit,
             teachers: teachers ?? [],
+            group: group,
             initialSchedules: initialSchedules ?? [],
           ),
         ),

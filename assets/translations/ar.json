@@ -96,5 +96,61 @@
   "theme": "المظهر",
   "light": "فاتح",
   "dark": "داكن",
-  "system": "النظام"
+  "system": "النظام",
+  "saturday": "السبت",
+  "sunday": "الأحد",
+  "monday": "الاثنين",
+  "tuesday": "الثلاثاء",
+  "wednesday": "الأربعاء",
+  "thursday": "الخميس",
+  "friday": "الجمعة",
+  "groupsHeaderDesc": "إضافة وتعديل بيانات المجموعات",
+  "addGroups": "إضافة مجموعة",
+  "groupsViewEmptySearch": "لا يوجد مجموعات تطابق البحث",
+  "groupsViewEmptyNone": "لا يوجد مجموعات حالياً",
+  "edit": "تعديل",
+  "groupDeletedSuccessfully": "تم حذف المجموعة {} بنجاح",
+  "deleteGroupConfirmMsg": "هل أنت متأكد من حذف هذه المجموعة؟",
+  "groups_view": {
+    "toolbar": {
+      "add_group": "إضافة مجموعة",
+      "search_hint": "بحث عن مجموعة...",
+      "filter_teacher_all": "جميع المدرسين"
+    },
+    "table": {
+      "labels": {
+        "teacher": "المدرس",
+        "description": "الوصف",
+        "max_students": "السعة القصوى",
+        "students_of_max": "{} من {}",
+        "monthly_fee": "الاشتراك الشهري"
+      }
+    },
+    "card": {
+      "details_group": "تفاصيل المجموعة",
+      "schedules_title": "مواعيد المجموعة"
+    },
+    "form": {
+      "add_title": "إضافة مجموعة جديدة",
+      "edit_title": "تعديل بيانات المجموعة",
+      "basic_info": "المعلومات الأساسية",
+      "group_name": "اسم المجموعة",
+      "group_name_required": "اسم المجموعة مطلوب",
+      "description": "الوصف (اختياري)",
+      "teacher": "المدرس",
+      "teacher_required": "يرجى اختيار المدرس",
+      "pricing_capacity": "التسعير والسعة",
+      "monthly_fee": "قيمة الاشتراك",
+      "monthly_fee_required": "قيمة الاشتراك مطلوبة",
+      "max_students": "عدد الطلاب",
+      "required": "مطلوب",
+      "schedule": "المواعيد",
+      "add_schedule": "إضافة موعد",
+      "day": "اليوم",
+      "day_required": "اليوم مطلوب",
+      "from": "من",
+      "to": "إلى",
+      "save": "حفظ البيانات"
+    }
+  }
 }

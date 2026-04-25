@@ -36,7 +36,8 @@ class GroupsCubit extends Cubit<GroupsState> {
     try {
       final newGroup = await groupsRepo.addGroup(model);
       await groupsRepo.replaceSchedulesForGroup(newGroup.id, schedules);
-      await _reloadAll();
+      allGroups.insert(0, newGroup);
+      _emitLoadedState();
     } catch (e) {
       _emitErrorState(e);
     }

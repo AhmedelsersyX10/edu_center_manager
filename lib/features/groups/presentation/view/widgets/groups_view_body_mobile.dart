@@ -3,6 +3,7 @@ import 'package:edu_center_manager/core/widgets/connectivity_wrapper.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_model.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_schedule_model.dart';
 import 'package:edu_center_manager/features/groups/presentation/view/widgets/groups_header.dart';
+import 'package:edu_center_manager/features/groups/presentation/view/widgets/groups_mobile_list.dart';
 import 'package:edu_center_manager/features/groups/presentation/view/widgets/groups_toolbar.dart';
 import 'package:edu_center_manager/features/groups/presentation/view_model/groups_cubit.dart';
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
@@ -52,6 +53,17 @@ class GroupsViewBodyMobile extends StatelessWidget {
                       context.read<GroupsCubit>().filterGroups(teacherId: v);
                     }
                   },
+                ),
+                const SizedBox(height: 16),
+                GroupsMobileList(
+                  isLoading: isLoading,
+                  groups: groups,
+                  allCount: allCount,
+                  scheduleRowsCount: scheduleRowsCount,
+                  teacherList: teacherList,
+                  schedulesByGroupId: schedulesByGroupId,
+                  studentCountByGroupId: studentCountByGroupId,
+                  filteredEmpty: filteredEmpty,
                 ),
               ],
             ),

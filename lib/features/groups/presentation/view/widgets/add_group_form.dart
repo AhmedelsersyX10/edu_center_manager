@@ -6,6 +6,7 @@ import 'package:edu_center_manager/features/groups/data/models/group_schedule_mo
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:uuid/uuid.dart';
 
 class AddGroupForm extends StatefulWidget {
   final Future<void> Function(GroupModel model, List<GroupScheduleModel> schedules) onSubmit;
@@ -79,7 +80,7 @@ class _AddGroupFormState extends State<AddGroupForm> {
       final tid = _teacherId;
       final desc = _descriptionController.text.trim();
       final model = GroupModel(
-        id: widget.group?.id ?? '',
+        id: widget.group?.id ?? const Uuid().v4(),
         name: _nameController.text.trim(),
         teacherId: tid,
         maxStudents: maxStudents,

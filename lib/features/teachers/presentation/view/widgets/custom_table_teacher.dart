@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:edu_center_manager/core/utils/app_style.dart';
+import 'package:edu_center_manager/core/utils/app_themes.dart';
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
 import 'package:edu_center_manager/features/teachers/presentation/view_model/subject_helper.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class CustomTableTeacher extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
+        color: context.colors.cardBackground,
       ),
       clipBehavior: Clip.antiAlias,
       child: Theme(
@@ -83,7 +85,7 @@ class CustomTableTeacher extends StatelessWidget {
                 tooltip: 'edit'.tr(),
               ),
               IconButton(
-                icon: const Icon(Icons.delete_outline, size: 20),
+                icon: const Icon(Icons.delete, color: Colors.redAccent, size: 20),
                 onPressed: () => onDelete(teacher),
                 tooltip: 'delete'.tr(),
               ),
