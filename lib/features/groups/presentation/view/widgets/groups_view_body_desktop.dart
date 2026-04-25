@@ -3,6 +3,7 @@ import 'package:edu_center_manager/core/widgets/connectivity_wrapper.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_model.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_schedule_model.dart';
 import 'package:edu_center_manager/features/groups/presentation/view/widgets/groups_header.dart';
+import 'package:edu_center_manager/features/groups/presentation/view/widgets/groups_toolbar.dart';
 import 'package:edu_center_manager/features/groups/presentation/view_model/groups_cubit.dart';
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,21 @@ class GroupsViewBodyDesktop extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [GroupsHeader(teacherList: teacherList, isMobile: false)],
+              children: [
+                GroupsHeader(teacherList: teacherList, isMobile: false),
+                const SizedBox(height: 24),
+                GroupsToolbar(
+                  isMobile: false,
+                  teachers: teacherList,
+                  selectedTeacherId: selectedTeacher,
+                  onSearch: (q) => context.read<GroupsCubit>().searchGroups(q),
+                  onTeacherChanged: (v) {
+                    if (v != null) {
+                      context.read<GroupsCubit>().filterGroups(teacherId: v);
+                    }
+                  },
+                ),
+              ],
             ),
           ),
         );
