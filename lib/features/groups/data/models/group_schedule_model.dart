@@ -1,7 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class GroupScheduleModel {
   final String id;
   final String groupId;
-  final String day;
+  final WeekDay day;
   final String fromTime;
   final String toTime;
 
@@ -13,17 +15,19 @@ class GroupScheduleModel {
     required this.toTime,
   });
 
-  factory GroupScheduleModel.fromJson(Map<String, dynamic> json) => GroupScheduleModel(
-    id: json['id'],
-    groupId: json['group_id'],
-    day: json['day'],
-    fromTime: json['from_time'],
-    toTime: json['to_time'],
-  );
+  factory GroupScheduleModel.fromJson(Map<String, dynamic> json) {
+    return GroupScheduleModel(
+      id: json['id']?.toString() ?? '',
+      groupId: json['group_id']?.toString() ?? '',
+      day: WeekDay.values.byName(json['day']?.toString() ?? 'sat'),
+      fromTime: json['from_time']?.toString() ?? '',
+      toTime: json['to_time']?.toString() ?? '',
+    );
+  }
 
   Map<String, dynamic> toGroupScheduleTableJson() => {
     'group_id': groupId,
-    'day': day,
+    'day': day.name,
     'from_time': fromTime,
     'to_time': toTime,
   };
@@ -31,7 +35,7 @@ class GroupScheduleModel {
   GroupScheduleModel copyWith({
     String? id,
     String? groupId,
-    String? day,
+    WeekDay? day,
     String? fromTime,
     String? toTime,
   }) {
@@ -43,4 +47,28 @@ class GroupScheduleModel {
       toTime: toTime ?? this.toTime,
     );
   }
+
+  String get fromDisplay => _hhMm(fromTime);
+
+  String get toDisplay => _hhMm(toTime);
+
+  static String _hhMm(String raw) {
+    final t = raw.trim();
+    if (t.length >= 5) return t.substring(0, 5);
+    return t;
+  }
+
+  String get dayLocalized {
+    switch (day) {
+      case WeekDay.sat: return 'saturday'.tr();
+      case WeekDay.sun: return 'sunday'.tr();
+      case WeekDay.mon: return 'monday'.tr();
+      case WeekDay.tue: return 'tuesday'.tr();
+      case WeekDay.wed: return 'wednesday'.tr();
+      case WeekDay.thu: return 'thursday'.tr();
+      case WeekDay.fri: return 'friday'.tr();
+    }
+  }
 }
+
+enum WeekDay { sat, sun, mon, tue, wed, thu, fri }

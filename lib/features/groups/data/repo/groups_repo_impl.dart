@@ -13,7 +13,7 @@ class GroupsRepoImpl implements GroupsRepo {
     try {
       return await groupsService.getGroups();
     } catch (e) {
-      throw Exception('فشل في تحميل بيانات المجموعات');
+      throw Exception('فشل في تحميل بيانات المجموعات: $e');
     }
   }
 
@@ -22,7 +22,7 @@ class GroupsRepoImpl implements GroupsRepo {
     try {
       return await groupsService.addGroup(model);
     } catch (e) {
-      throw Exception('فشل في إضافة المجموعة');
+      throw Exception('فشل في إضافة المجموعة: $e');
     }
   }
 
@@ -67,7 +67,7 @@ class GroupsRepoImpl implements GroupsRepo {
     try {
       await groupsService.replaceSchedulesForGroup(groupId, schedules);
     } catch (e) {
-      throw Exception('فشل في حفظ مواعيد المجموعة');
+      throw Exception('فشل في حفظ مواعيد المجموعة: $e');
     }
   }
 }

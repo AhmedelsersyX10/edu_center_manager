@@ -11,7 +11,7 @@ class GroupsService {
   static const String groupId = 'group_id';
 
   Future<List<GroupModel>> getGroups() async {
-    final response = await client.from(table).select().order('created_at', ascending: false);
+    final response = await client.from(table).select();
     final responseMap = response
         .map((json) => GroupModel.fromJson(Map<String, dynamic>.from(json as Map)))
         .toList();
@@ -41,10 +41,7 @@ class GroupsService {
   }
 
   Future<List<GroupScheduleModel>> getAllSchedules() async {
-    final response = await client
-        .from(schedulesTable)
-        .select()
-        .order('created_at', ascending: false);
+    final response = await client.from(schedulesTable).select();
     return response
         .map((json) => GroupScheduleModel.fromJson(Map<String, dynamic>.from(json as Map)))
         .toList();
@@ -64,7 +61,7 @@ class GroupsService {
   Future<void> replaceSchedulesForGroup(String id, List<GroupScheduleModel> schedules) async {
     await client.from(schedulesTable).delete().eq(groupId, id);
     if (schedules.isEmpty) return;
-    final rows = schedules.map((s) => s.toGroupScheduleTableJson()).toList();
+    final rows = schedules.map((s) => s.copyWith(groupId: id).toGroupScheduleTableJson()).toList();
     await client.from(schedulesTable).insert(rows);
   }
 }
