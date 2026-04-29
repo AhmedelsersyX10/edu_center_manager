@@ -90,7 +90,8 @@ class _CustomDesktopGroupCardListState extends State<CustomDesktopGroupCardList>
           teachers: widget.teachers,
           schedules: widget.schedulesByGroupId[group.id] ?? const [],
           studentsInGroup: widget.studentCountByGroupId[group.id] ?? 0,
-          onStudents: () {},
+          onStudents: () =>
+              openDetailsGroup(context, group, widget.schedulesByGroupId, widget.teachers),
           onEdit: () => onEditGroup(context, group, false, widget.teachers),
           onDelete: () => onDeleteGroup(context, group),
         );

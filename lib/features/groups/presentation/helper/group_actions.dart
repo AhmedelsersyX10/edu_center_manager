@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:edu_center_manager/core/utils/size_config.dart';
 import 'package:edu_center_manager/core/widgets/delete_confirm_dialog.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_model.dart';
 import 'package:edu_center_manager/features/groups/data/models/group_schedule_model.dart';
+import 'package:edu_center_manager/features/groups/presentation/view/widgets/details_group_widgets/group_students_detail_view.dart';
+import 'package:edu_center_manager/features/groups/presentation/view/widgets/show_details_group.dart';
 import 'package:edu_center_manager/features/groups/presentation/view/widgets/show_add_group_form.dart';
 import 'package:edu_center_manager/features/groups/presentation/view_model/groups_cubit.dart';
 import 'package:edu_center_manager/features/teachers/data/models/teacher_model.dart';
@@ -89,6 +92,23 @@ void onDeleteGroup(BuildContext context, GroupModel group) {
           ),
         );
       },
+    ),
+  );
+}
+
+void openDetailsGroup(
+  BuildContext context,
+  GroupModel group,
+  Map<String, List<GroupScheduleModel>> schedulesByGroupId,
+  List<TeacherModel> teachers,
+) {
+  final isMobile = MediaQuery.sizeOf(context).width < SizeConfig.desktop;
+  showDetailsGroup(
+    context,
+    child: GroupStudentsDetailView(
+      group: group,
+      schedules: schedulesByGroupId[group.id] ?? const [],
+      isMobile: isMobile,
     ),
   );
 }

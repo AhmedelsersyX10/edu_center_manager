@@ -86,7 +86,8 @@ class _CustomMobileGroupCardListState extends State<CustomMobileGroupCardList> {
           teachers: widget.teachers,
           schedules: widget.schedulesByGroupId[group.id] ?? const [],
           studentsInGroup: widget.studentCountByGroupId[group.id] ?? 0,
-          onStudents: () {},
+          onStudents: () =>
+              openDetailsGroup(context, group, widget.schedulesByGroupId, widget.teachers),
           onEdit: () => onEditGroup(context, group, true, widget.teachers),
           onDelete: () => onDeleteGroup(context, group),
         );

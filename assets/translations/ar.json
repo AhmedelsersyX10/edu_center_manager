@@ -18,6 +18,7 @@
   "addStudent": "إضافة طالب",
   "searchForStudent": "بحث عن طالب",
   "all": "الكل",
+  "all_grades": "جميع الصفوف",
   "grade1Prep": "الصف الأول الإعدادي",
   "grade2Prep": "الصف الثاني الإعدادي",
   "grade3Prep": "الصف الثالث الإعدادي",
@@ -97,6 +98,7 @@
   "light": "فاتح",
   "dark": "داكن",
   "system": "النظام",
+  "retry": "إعادة المحاولة",
   "saturday": "السبت",
   "sunday": "الأحد",
   "monday": "الاثنين",
@@ -129,6 +131,28 @@
     "card": {
       "details_group": "تفاصيل المجموعة",
       "schedules_title": "مواعيد المجموعة"
+    },
+    "details_group": {
+      "title": "إضافة طلاب للمجموعة",
+      "search_hint": "بحث عن طالب...",
+      "added_snackbar": "تم إضافة {} بنجاح",
+      "added_bulk_snackbar": "تم إضافة {} طلاب بنجاح",
+      "select_all_visible": "تحديد الكل",
+      "add_selected": "إضافة المحدد ({})",
+      "none_available": "لا يوجد طلاب متاحين للإضافة",
+      "no_matching": "لا يوجد طلاب يطابقون البحث"
+    },
+    "students_detail": {
+      "add_student": "إضافة طلاب",
+      "remove_all": "حذف الكل",
+      "remove_all_confirm": "هل أنت متأكد من حذف جميع الطلاب من مجموعة {}؟",
+      "selected_count": "المحدد: {}",
+      "remove_selected": "حذف المحدد ({})",
+      "remove_selected_confirm": "هل أنت متأكد من حذف {} طالب من مجموعة {}؟",
+      "list_title": "قائمة الطلاب ({})",
+      "empty": "لا يوجد طلاب في هذه المجموعة حالياً",
+      "no_search_results": "لا يوجد نتائج للبحث",
+      "remove_one": "حذف من المجموعة"
     },
     "form": {
       "add_title": "إضافة مجموعة جديدة",

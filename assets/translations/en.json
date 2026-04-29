@@ -18,6 +18,7 @@
   "addStudent": "Add Student",
   "searchForStudent": "Search for student",
   "all": "All",
+  "all_grades": "All Grades",
   "grade1Prep": "1st Preparatory",
   "grade2Prep": "2nd Preparatory",
   "grade3Prep": "3rd Preparatory",
@@ -97,6 +98,7 @@
   "light": "Light",
   "dark": "Dark",
   "system": "System",
+  "retry": "Retry",
   "saturday": "Saturday",
   "sunday": "Sunday",
   "monday": "Monday",
@@ -129,6 +131,28 @@
     "card": {
       "details_group": "Group Details",
       "schedules_title": "Group Schedules"
+    },
+    "details_group": {
+      "title": "Add Students to Group",
+      "search_hint": "Search for student...",
+      "added_snackbar": "{} added successfully",
+      "added_bulk_snackbar": "{} students added successfully",
+      "select_all_visible": "Select All Visible",
+      "add_selected": "Add Selected ({})",
+      "none_available": "No students available to add",
+      "no_matching": "No students matching search"
+    },
+    "students_detail": {
+      "add_student": "Add Students",
+      "remove_all": "Remove All",
+      "remove_all_confirm": "Are you sure you want to remove all students from group {}?",
+      "selected_count": "Selected: {}",
+      "remove_selected": "Remove Selected ({})",
+      "remove_selected_confirm": "Are you sure you want to remove {} students from group {}?",
+      "list_title": "Students List ({})",
+      "empty": "No students in this group currently",
+      "no_search_results": "No search results",
+      "remove_one": "Remove from group"
     },
     "form": {
       "add_title": "Add New Group",
