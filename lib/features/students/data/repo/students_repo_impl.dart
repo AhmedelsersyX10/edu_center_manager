@@ -43,4 +43,31 @@ class StudentsRepoImpl implements StudentsRepo {
       throw Exception('فشل في حذف الطالب');
     }
   }
+
+  @override
+  Future<Set<String>> getStudentIdsInGroup(String groupId) async {
+    try {
+      return await studentsService.getStudentIdsInGroup(groupId);
+    } catch (e) {
+      throw Exception('فشل في تحميل طلاب المجموعة');
+    }
+  }
+
+  @override
+  Future<void> addStudentsToGroup(String groupId, List<String> studentIds) async {
+    try {
+      await studentsService.addStudentsToGroup(groupId, studentIds);
+    } catch (e) {
+      throw Exception('فشل في إضافة الطلاب للمجموعة');
+    }
+  }
+
+  @override
+  Future<void> removeStudentFromGroup(String groupId, String studentId) async {
+    try {
+      await studentsService.removeStudentFromGroup(groupId, studentId);
+    } catch (e) {
+      throw Exception('فشل في إزالة الطالب من المجموعة');
+    }
+  }
 }
