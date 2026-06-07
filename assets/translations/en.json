@@ -113,6 +113,8 @@
   "edit": "Edit",
   "groupDeletedSuccessfully": "Group deleted successfully",
   "deleteGroupConfirmMsg": "Are you sure you want to delete this group?",
+  "groupAddedSuccessfully": "Group added successfully",
+  "groupUpdatedSuccessfully": "Group updated successfully",
   "groups_view": {
     "toolbar": {
       "add_group": "Add Group",

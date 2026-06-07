@@ -113,6 +113,8 @@
   "edit": "تعديل",
   "groupDeletedSuccessfully": "تم حذف المجموعة {} بنجاح",
   "deleteGroupConfirmMsg": "هل أنت متأكد من حذف هذه المجموعة؟",
+  "groupAddedSuccessfully": "تم إضافة المجموعة بنجاح",
+  "groupUpdatedSuccessfully": "تم تحديث بيانات المجموعة بنجاح",
   "groups_view": {
     "toolbar": {
       "add_group": "إضافة مجموعة",

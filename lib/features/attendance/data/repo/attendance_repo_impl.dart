@@ -3,10 +3,10 @@ import 'package:edu_center_manager/features/attendance/data/repo/attendance_repo
 import 'package:edu_center_manager/features/attendance/data/service/attendance_service.dart';
 import 'package:edu_center_manager/features/students/data/models/student_model.dart';
 
-class AttendanceRepositoryImpl implements AttendanceRepo {
+class AttendanceRepoImpl implements AttendanceRepo {
   final AttendanceService _dataSource;
 
-  AttendanceRepositoryImpl({AttendanceService? dataSource})
+  AttendanceRepoImpl({AttendanceService? dataSource})
     : _dataSource = dataSource ?? AttendanceService();
 
   @override
